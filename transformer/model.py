@@ -8,7 +8,7 @@ class LayerNormalization(nn.Module):
         super().__init__()
         self.eps = eps
         self.alpha = nn.Parameter(torch.ones(features))
-        self.bias = nn.Parameter(torch.ones(features))
+        self.bias = nn.Parameter(torch.zeros(features))
 
     def forward(self, x):
         mean = x.mean(dim = -1, keepdim = True)
